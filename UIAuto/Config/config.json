@@ -1,0 +1,6 @@
+{
+    "base_url": "https://demo.automationtesting.in/Frames.html",
+    "browser": "chromium",
+    "headless": false,
+    "timeout": 40000
+}

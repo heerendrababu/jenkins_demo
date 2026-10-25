@@ -1,0 +1,6 @@
+{
+    "base_url": "https://demo.automationtesting.in/Alerts.html",
+    "browser": "chromium",
+    "headless": false,
+    "timeout": 40000
+}
