@@ -126,7 +126,7 @@ ul li              → all lists
 #     browser.close()
 
 with sync_playwright() as p:
-    b = p.chromium.launch(headless=False,slow_mo=2000)#,args=["--start-maximized"]) # Launches the Chromium browser in maximized window
+    b = p.chromium.launch(headless=True,slow_mo=2000)#,args=["--start-maximized"]) # Launches the Chromium browser in maximized window
     # or page = b.new_page("no_viewport=True")#This lets the browser use the actual window size rather than a fixed Playwright viewport.
     context = b.new_context(no_viewport=True)
     page = context.new_page()
