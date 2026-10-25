@@ -2,7 +2,6 @@
 """ collaboration for jenkins practice"""
 """ practice for merge conflicts"""
 import time
-from cProfile import label
 
 import pytest
 from playwright.sync_api import sync_playwright
@@ -19,7 +18,7 @@ from conftest import browser
 #     page.get_by_placeholder(text="Search Product").fill("tshirts")
 #     page.get_by_text(text = "Cart").first.click()
 
-"""
+
 def test_contact_form():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless = False, slow_mo = 3000)
@@ -37,7 +36,6 @@ def test_contact_form():
         assert page.get_by_text("Thank you for reaching out,").is_visible()
         page.get_by_role("button",name = "Done").click()
         browser.close()
-"""
 """
 @pytest.mark.demo
 def test_play_lab():
@@ -124,7 +122,7 @@ ul li              → all lists
 #     expect(page.get_by_role("link",name="Log out")).to_be_visible()
 #     print("positive login test passed")
 #     browser.close()
-
+"""
 with sync_playwright() as p:
     b = p.chromium.launch(headless=True,slow_mo=2000)#,args=["--start-maximized"]) # Launches the Chromium browser in maximized window
     # or page = b.new_page("no_viewport=True")#This lets the browser use the actual window size rather than a fixed Playwright viewport.
@@ -157,13 +155,10 @@ with sync_playwright() as p:
     page.locator('#end-date').fill('30-09-2026')
     page.get_by_role("button",name='Submit').click()
 
-    """
     "usa" → selects using the value attribute
      label="United States" → selects using the visible text
       select_option() with nothing → ❌ doesn't tell Playwright what to select.
-    """
     b.close()
-"""
 # ID
 page.locator("#phone")
 
