@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-       PLAYWRIGHT_BROWSERS_PATH = "${WORKSPACE}\\ms-playwright"
+        PLAYWRIGHT_BROWSERS_PATH = 'C:\\tools\\ms-playwright'
+        PYTHON = 'C:\\Users\\udayc\\PycharmProjects\\PythonProject2\\my_env\\Scripts\\python.exe'
     }
 
     stages {
