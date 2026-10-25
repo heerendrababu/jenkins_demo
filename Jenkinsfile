@@ -34,7 +34,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat '.venv\\Scripts\\python.exe -m pytest -v'
+                bat '.venv\\Scripts\\python.exe -m pytest -v playwrite_sample.py'
             }
         }
     }
