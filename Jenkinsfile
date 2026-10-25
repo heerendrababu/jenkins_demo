@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Playwright Tests') {
             steps {
-                bat '"%PYTHON%" -m pytest "UIAutomation\\test_jenkins.py" -v'
+                bat '"%PYTHON%" -m pytest "test_jenkins.py" -v'
             }
         }
     }
