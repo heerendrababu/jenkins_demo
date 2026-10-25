@@ -1,6 +1,6 @@
 """ Uday and Heerendra """
 """ collaboration for jenkins practice"""
-"""" Collaboration for Git practice """
+""" practice for merge conflicts"""
 import time
 from cProfile import label
 
