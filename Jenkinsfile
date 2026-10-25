@@ -3,28 +3,45 @@ pipeline {
     agent any
 
     environment {
-        PLAYWRIGHT_BROWSERS_PATH = 'C:\\tools\\ms-playwright'
-        PYTHON = 'C:\\Users\\udayc\\PycharmProjects\\PythonProject2\\my_env\\Scripts\\python.exe'
+        PLAYWRIGHT_BROWSERS_PATH = "${WORKSPACE}\\ms-playwright"
     }
 
     stages {
-        stage('Install Dependencies') {
+        stage('Checkout') {
             steps {
-                bat '"%PYTHON%" -m pip install -r requirements.txt'
+                echo 'Source code checked out from GitHub'
             }
         }
 
-        stage('Run Playwright Tests') {
+        stage('Create Virtual Environment') {
             steps {
-                bat '"%PYTHON%" -m pytest "playwright_sample.py" -v'
+                bat 'python -m venv .venv'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat '.venv\\Scripts\\python.exe -m pip install --upgrade pip'
+                bat '.venv\\Scripts\\python.exe -m pip install -r requirements.txt'
+            }
+        }
+
+        stage('Install Playwright Browser') {
+            steps {
+                bat '.venv\\Scripts\\python.exe -m playwright install chromium'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat '.venv\\Scripts\\python.exe -m pytest -v'
             }
         }
     }
 
     post {
         always {
-            echo 'Playwright test execution completed.'
+            echo 'Pipeline execution completed.'
         }
     }
 }
-
