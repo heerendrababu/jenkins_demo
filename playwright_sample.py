@@ -21,7 +21,7 @@ from conftest import browser
 
 def test_contact_form():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless = False, slow_mo = 3000)
+        browser = p.chromium.launch(headless = True, slow_mo = 3000)
         #browser1 = p.firefox.launch(headless = False)
         page = browser.new_page()
         page.goto("https://www.rapido.bike/Contact")
